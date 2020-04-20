@@ -125,3 +125,8 @@
 #calculater #term, #calculater #result{
     margin-left: 50px;
 }
+
+.history form{
+    background-color: rgba(61, 0, 29, 0.42);
+    color: #cabdd9;
+}

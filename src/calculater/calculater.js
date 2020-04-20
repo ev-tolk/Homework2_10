@@ -3,6 +3,11 @@ let newInputData = "";
 let sum = document.getElementById('result');
 let result = document.getElementById('calculater');
 let credits = document.getElementById('result');
+let newMoney = document.getElementById('money_shop');
+let newMoneyItem = "";
+let arr = [];
+
+
 
 //let newP = document.createElement('p');
 //newP.className = 'sum';
@@ -10,6 +15,19 @@ let credits = document.getElementById('result');
 inputData.addEventListener('keypress', function(kePressed){
     if(kePressed.which == 13){
         newInputData = Number(this.value); 
+    }
+})
+
+newMoney.addEventListener('keypress', function(kePressed){
+    if(kePressed.which == 13){
+        newMoneyItem = Number(this.value); 
+        arr.push(newMoneyItem);
+        let form = document.getElementById('history').getElementsByTagName('form');
+        form[0].innerHTML = '';
+        for(let i = 0; i < arr.length; i++){
+            form[0].innerHTML += `
+            <div class="money${i}">${arr[i]}</div>`;
+        }
     }
 })
 
@@ -33,5 +51,6 @@ function sumCredits(){
     //newP.innerHTML = currentValue;
     //sum.appendChild(newP);
 }
+
 
 export {sumCredits, result};

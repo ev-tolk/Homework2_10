@@ -1,4 +1,4 @@
-
+import{URL_BYN} from '../exchange/exchange'
 let inpMoney = document.querySelector("input[id=inpMoney]");
 let newItem = '';
 
@@ -73,13 +73,27 @@ function converter(param){
     });
 }
 
-/*function data(data){
+/*
+ /*
+
+*/
+
+/*const fetchApi = fetch(URL_BYN);
+
+async function converter(){
+    const value = await fetchApi;
+    return value;
+}
+
+let a = converter.then(response => console.log(response));
+
+function data(){
     let convMoney1 = document.getElementById('money1').value;
     let convMoney2 = document.getElementById('money2').value;
         switch(true){
             case (convMoney1 == 'byn' && convMoney2 == 'usd'):
                 //alert('byn->usd');
-                document.getElementById('outpMoney').value = (newItem/data[4].Cur_OfficialRate).toFixed(2);
+                document.getElementById('outpMoney').value = (newItem/a.data[4].Cur_OfficialRate).toFixed(2);
                 break;
             case (convMoney1 == 'byn' && convMoney2 == 'pln'):
                 //alert('byn->pln');
@@ -128,11 +142,6 @@ function converter(param){
             default:
                 alert('Перезагрузите страницу');
         }
-}
-
-async function converter(param){
-   const value = await data(data);
-   return value;
 }*/
 
 export {converter, inpMoney};
